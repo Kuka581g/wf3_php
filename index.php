@@ -26,6 +26,62 @@
 		echo "Je suis un enfant";
 	}
 
+	$age2 = 33;
+	echo "<br>";
+ 	echo $age <=> $age2;
+ 	echo "<br>";
+ 	echo 1<=>2;
+ 	echo "<br>";
+ 	echo 2<=>1;
+ 	echo "<br>";
+
+ 	//Déclaration de variables
+ 	$a = null;
+
+ 	$c = 5;
+ 	$b;
+ 	$d;
+
+ 	echo $a ?? $b ?? $c ?? $d;
+ 	echo "<br>";
+
+ 	// L'arithmétique :
+ 	$a = 5;
+ 	$b = $a + 5;
+ 	echo "b vaut $b et a vaut $a";
+
+ 	echo "<br>";
+ 	$b = $a += 5; // $a = $a + 5
+ 	echo "b vaut $b et a vaut $a";
+ 	echo "<br>";
+
+ 	$a++; // $a = $a + 1
+ 	echo "a vaut $a <br>";
+
+ 	++$a; // $a = $a + 1
+ 	echo "a vaut $a <br>";
+
+ 	// Différence : 
+ 	echo "avant a vaut ".++$a;
+ 	echo " après a vaut ".$a;
+ 	echo "<br>";
+ 	echo "avant a vaut ".$a++;
+ 	echo " après a vaut ".$a;
+ 	echo "<pre>";
+ 	print_r ($a);
+ 	echo "</pre>";
+ 	echo "<pre>";
+ 	var_dump($a);
+ 	echo "Ce code n'est pas interprété\n\ndu tout";
+ 	echo "</pre>";
+
+ 	$array = ["couleur" => "rouge", "taille" => 1.70];
+ 	echo "<pre>";
+ 	var_dump($array);
+ 	echo "</pre>";
+
+ 	die ("fini");
+
 	?>
 
 </body>
