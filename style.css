@@ -16,16 +16,51 @@
 
 			h2 {
 				text-decoration: underline;
+				font-size: 4em;
 			}
 
 			fieldset {
 				width: 50%;
 				margin: auto;
-        box-shadow: 0px 1px 4px black;
-        background-color: #f1f2fa;
+       			box-shadow: 0px 1px 4px black;
+				background-color: #f1f2fa;
+				font-size: 3em;
 			}
 
 			.error {
 				border-color: red;
 				background-color: red;
+			}
+			
+			p {
+				font-size: 3em;
+			}
+
+			.tour {
+				font-size: 4em;
+			}
+
+			input {
+				width: 120px;
+				font-size: 31px;
+				padding: 5px;
+			}
+
+			button {
+				width: 20%;
+				font-size: 40px;
+			}
+
+			select {
+				font-size: 30px;
+			}
+
+			button:hover {
+				background-color: rgba(128, 128, 128, 0.15);
+			}
+
+			.ko {
+				color: red;
+				font-size: 5em;
+				text-shadow: 2px 0px 1px;
 			}

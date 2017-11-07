@@ -15,11 +15,12 @@
   <fieldset>
   <legend>Pokemon 1 :
     <select id="pokemon1" name="pokemon1" <?php echo isset($form_error['pokemon1']) ? 'class="error"' : ''; ?>>
-      <?php
-        foreach($pokemons as $pokemon => $stats) {
-          echo '<option value="' . $pokemon . '">' . $pokemon . '</option>';
-        }
-      ?>
+    <option value="">- Aucun -</option>
+          <?php
+            foreach($pokemons as $pokemon => $stats) {
+              echo '<option value="' . $pokemon . '" ' . (isset($nom_pokemon1) && $pokemon == $nom_pokemon1 ? 'selected' : '') . '>' . $pokemon . '</option>';
+            }
+          ?>
     </select>
   </legend>
   <div>Points de vie : <input type="test" name="pv_pokemon1" value="<?php echo $pikachu['pv']; ?>" <?php echo isset($form_error['pv_pokemon1']) ? 'class="error"' : ''; ?> /></div>
