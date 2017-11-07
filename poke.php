@@ -62,7 +62,7 @@ $pokemon2 = $pokemons[$nom_pokemon2];
 $pokemon2["pv"] = $_GET['pv_pokemon2'];
 $pokemon2["defense"] = $_GET['defense_pokemon2'];
 $pokemon2["attaque"] = $_GET['attaque_pokemon2'];
-echo "<h3  style=\" font-size: 6em; border: 1px solid; width: 56%; box-shadow: 2px 4px 2px grey; margin: 26px auto; padding: 14px; text-shadow: 1px 0px 1px; \">$nom_pokemon1 affronte $nom_pokemon2</h3>";
+echo "<h3  class=\" vs \">$nom_pokemon1 affronte $nom_pokemon2</h3>";
 // Boucle de combat
 do {
   // attaque

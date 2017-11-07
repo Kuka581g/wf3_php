@@ -25,6 +25,7 @@
        			box-shadow: 0px 1px 4px black;
 				background-color: #f1f2fa;
 				font-size: 3em;
+
 			}
 
 			.error {
@@ -63,4 +64,33 @@
 				color: red;
 				font-size: 5em;
 				text-shadow: 2px 0px 1px;
+				animation: scale 1.5s infinite alternate;
+			}
+
+			.vs {
+				font-size: 6em;
+				border: 1px solid;
+				width: 56%;
+				box-shadow:2px 4px 2px grey;
+				margin: 26px auto;
+				padding: 14px;
+				text-shadow: 2px 4px 1px rgba(128, 128, 128, 0.8);
+				animation: scale 1s infinite alternate;
+			}
+
+			@keyframes scale {
+				0% {transform: scale(1);}
+				100% {transform: scale(1.1);}
+			}
+
+			.negative {
+				color:red;
+			}
+
+			.def {
+				color: blue;
+			}
+
+			.pv {
+				color: rgb(102, 231, 102);
 			}
