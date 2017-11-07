@@ -65,6 +65,8 @@
 				font-size: 5em;
 				text-shadow: 2px 0px 1px;
 				animation: scale 1.5s infinite alternate;
+				margin: 50px auto;
+				width: 50%;
 			}
 
 			.vs {
@@ -93,4 +95,8 @@
 
 			.pv {
 				color: rgb(102, 231, 102);
+			}
+
+			hr {
+				width: 96%;
 			}

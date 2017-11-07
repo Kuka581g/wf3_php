@@ -48,3 +48,6 @@
 </form>
 </body>
 </html>
+
+Pokemons : id, numero, nom, experience, vie, defense, attaque, id_pokedex
+Pokédex : id, nom
