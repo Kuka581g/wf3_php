@@ -1,13 +1,12 @@
 
 			@font-face {
 				font-family: "Pixel";
-				src: url('font/PIXELADE.ttf');
+				src: url('../font/PIXELADE.ttf');
 			} 
 
 			body {
 				font-family: 'Pixel', sans-serif;
-				text-align: center;
-				
+				text-align: center;				
 			}
 			form {
 				background-image: url ('../img/background.png');

@@ -1,88 +1,71 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Exemple</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <!-- Ins�rer le css ici -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body style="font-family: 'Pixel', sans-serif;">
+  <img src="img/arene.jpg"/>
 
-	<?php
-	$nom = 'Dupont';
-	$prénom = 'Jean';
-	$age = 42;
+  <?php
+    require("inc/pokemon.php");
+  ?>
 
-	echo "Bonjour je suis ".$nom." ".$prénom;
+  <form method="post">
+    <fieldset>
+      <legend>Pokemon 1 :
+        <select name="pokemon1" <?php echo isset($form_error['pokemon1']) ? 'class="error"' : ''; ?>>
+          <option value="">- Aucun -</option>
+          <?php
+            foreach($pokemons as $pokemon => $stats) {
+              echo '<option value="' . $pokemon . '" ' . (isset($nom_pokemon1) && $pokemon == $nom_pokemon1 ? 'selected' : '') . '>' . $pokemon . '</option>';
+            }
+          ?>
+        </select>
+      </legend>
+      <div>Points VIE : <input type="test" name="pv_pokemon1" value="<?php echo isset($pokemon1) ? $pokemon1['pv'] : ''; ?>" <?php echo isset($form_error['pv_pokemon1']) ? 'class="error"' : ''; ?> /></div>
+      <div>Points DEF : <input type="test" name="defense_pokemon1" value="<?php echo isset($pokemon1) ? $pokemon1['defense'] : ''; ?>" <?php echo isset($form_error['defense_pokemon1']) ? 'class="error"' : ''; ?> /></div>
+      <div>Points ATK : <input type="test" name="attaque_pokemon1" value="<?php echo isset($pokemon1) ? $pokemon1['attaque'] : ''; ?>" <?php echo isset($form_error['attaque_pokemon1']) ? 'class="error"' : ''; ?> /></div>
+    </fieldset>
 
-	echo "<br/>";
+    <button type="submit" style="margin-top: 10px; margin-bottom: 10px; box-shadow: 1px 1px 1px grey; ">Combattez !</button>
+    
+    <fieldset>
+      <legend>Pokemon 2 :
+        <select id="pokemon2" name="pokemon2" <?php echo isset($form_error['pokemon2']) ? 'class="error"' : ''; ?>>
+          <option value="">- Aucun -</option>
+          <?php
+            foreach($pokemons as $pokemon => $stats) {
+              echo '<option value="' . $pokemon . '" ' . (isset($nom_pokemon2) && $pokemon == $nom_pokemon2 ? 'selected' : '') . '>' . $pokemon . '</option>';
+            }
+          ?>
+        </select>
+      </legend>
+      <div>Points VIE : <input type="test" name="pv_pokemon2" value="<?php echo isset($pokemon2) ? $pokemon2['pv'] : ''; ?>" <?php echo isset($form_error['pv_pokemon2']) ? 'class="error"' : ''; ?> /></div>
+      <div>Points DEF : <input type="test" name="defense_pokemon2" value="<?php echo isset($pokemon2) ? $pokemon2['defense'] : ''; ?>" <?php echo isset($form_error['defense_pokemon2']) ? 'class="error"' : ''; ?> /></div>
+      <div>Points ATK : <input type="test" name="attaque_pokemon2" value="<?php echo isset($pokemon2) ? $pokemon2['attaque'] : ''; ?>" <?php echo isset($form_error['attaque_pokemon2']) ? 'class="error"' : ''; ?> /></div>
+    </fieldset>
+  </form>
 
-	echo "J'ai $age ans";
-
-	echo "<br/>";
-
-	if ($age > 18 && $prénom == "Jean") {
-		echo "Je suis majeur";
-	} elseif ($age > 15) {
-		echo "Je suis un ado";
-	} else {
-		echo "Je suis un enfant";
-	}
-
-	$age2 = 33;
-	echo "<br>";
- 	echo $age <=> $age2;
- 	echo "<br>";
- 	echo 1<=>2;
- 	echo "<br>";
- 	echo 2<=>1;
- 	echo "<br>";
-
- 	//Déclaration de variables
- 	$a = null;
-
- 	$c = 5;
- 	$b;
- 	$d;
-
- 	echo $a ?? $b ?? $c ?? $d;
- 	echo "<br>";
-
- 	// L'arithmétique :
- 	$a = 5;
- 	$b = $a + 5;
- 	echo "b vaut $b et a vaut $a";
-
- 	echo "<br>";
- 	$b = $a += 5; // $a = $a + 5
- 	echo "b vaut $b et a vaut $a";
- 	echo "<br>";
-
- 	$a++; // $a = $a + 1
- 	echo "a vaut $a <br>";
-
- 	++$a; // $a = $a + 1
- 	echo "a vaut $a <br>";
-
- 	// Différence : 
- 	echo "avant a vaut ".++$a;
- 	echo " après a vaut ".$a;
- 	echo "<br>";
- 	echo "avant a vaut ".$a++;
- 	echo " après a vaut ".$a;
- 	echo "<pre>";
- 	print_r ($a);
- 	echo "</pre>";
- 	echo "<pre>";
- 	var_dump($a);
- 	echo "Ce code n'est pas interprété\n\ndu tout";
- 	echo "</pre>";
-
- 	$array = ["couleur" => "rouge", "taille" => 1.70];
- 	echo "<pre>";
- 	var_dump($array);
- 	echo "</pre>";
-
- 	die ("fini");
-
-	?>
+  <script type="text/javascript" src="js/function.js"></script>
+  <script type="text/javascript">
+    var pokemons = [];
+    <?php
+      foreach($pokemons as $pokemon => $stats) {
+        echo 'pokemons["' . $pokemon . '"] = [];' . "\n";
+        foreach ($stats as $cle => $valeur) {
+          echo 'pokemons["' . $pokemon . '"]["' . $cle . '"] = ' . $valeur . "\n";
+        }
+      }
+    ?>
+    $(document).ready(function() {
+      // Tous les select avec un attribut name qui commence par 'pokemon'
+      $("select[name^='pokemon']").on("change", changePokemon);
+    });
+  </script>
 
 </body>
 </html>
