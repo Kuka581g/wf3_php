@@ -61,8 +61,9 @@
         <div class="text-center">
             <img src="../img/pokemon.png" alt="Logo" style="width: 30%;">
         </div>
-        <img id="pokeballl" src="../img/pokeball.png" alt="Pokeball">
+        
         <form action="" style="margin-top: 10px;">
+            <img id="pokeballl" src="../img/pokeball.png" alt="Pokeball">
             <div class="form-control form-control-lg fondForm">
                 <div style="text-align: -webkit-right;">
                     <label for="numero_pokemon"> Numéro Pokemon :</label>
