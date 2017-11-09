@@ -1,0 +1,21 @@
+body {
+    background-image: url(../img/fond2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.fondForm {
+    margin-top: 5px; 
+    margin: auto; 
+    width: 50%; 
+    text-align: center;    
+    box-shadow: 2px 3px 8px grey;
+}
+
+#pokeballl {
+    width: 20%;
+    position: absolute;
+    left: 427px;
+    top: 198px;
+}

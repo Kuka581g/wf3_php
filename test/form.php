@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 
 <body>
@@ -58,16 +59,11 @@
     ?>
 
         <div class="text-center">
-            <img src="../img/pokemon.png" alt="" style="width: 30%;">
+            <img src="../img/pokemon.png" alt="Logo" style="width: 30%;">
         </div>
-        <img src="../img/pokeball.png" alt="" style=" width: 20%;
-                position: absolute;
-                left: 427px;
-                top: 198px;
-        ">
+        <img id="pokeballl" src="../img/pokeball.png" alt="Pokeball">
         <form action="" style="margin-top: 10px;">
-            <div class="form-control form-control-lg" style="margin-top: 5px; margin: auto; width: 50%; text-align: center;    box-shadow: 2px 3px 8px grey;
-">
+            <div class="form-control form-control-lg fondForm">
                 <div style="text-align: -webkit-right;">
                     <label for="numero_pokemon"> Numéro Pokemon :</label>
                     <input type="text" id="numero_pokemon" name="numero_pokemon">
