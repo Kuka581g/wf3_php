@@ -14,19 +14,21 @@ body {
 }
 
 #pokeballl {
-    width: 20%;
-    position: absolute;
-    left: 427px;
-    top: 236px;
+    
 }
 
 #logo {
+    margin-bottom: 20px;
     margin-top: 20px;
     animation: scale 1s infinite alternate;
 }
 
 #pokeballl:hover {
     animation: rotate 1s infinite alternate;
+}
+
+#insertPokemon {
+    box-shadow: 3px 4px 9px grey;
 }
 
 @keyframes rotate {
