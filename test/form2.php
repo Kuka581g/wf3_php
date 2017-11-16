@@ -40,7 +40,7 @@
 
     if (isset($db)) {
 
-    $query= $db->prepare('SELECT * FROM pokemon WHERE pokemon.id= :id');
+    $query= $db->prepare('SELECT pokemon.id, numero, nom_proprietaire, nom, experience, vie, defense, attaque, experience FROM pokedex INNER JOIN pokemon ON pokedex.id = pokemon.id_pokedex');
 
         $id=$_GET['id'];
         $query->bindParam(':id', $id, PDO::PARAM_INT);
@@ -66,43 +66,43 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="numero_pokemon">Numéro</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['numero_pokemon']) ? 'is-invalid' : '' ?>" id="numero_pokemon" name="numero_pokemon" value="<?php echo isset($result['numero']) ? $result['numero'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['numero_pokemon']) ? 'is-invalid' : '' ?>" id="numero_pokemon" name="numero_pokemon" value="<?php echo isset($result['numero']) ? $result['numero'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="nom_pokemon">Nom</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['nom_pokemon']) ? 'is-invalid' : '' ?>" id="nom_pokemon" name="nom_pokemon" value="<?php echo isset($result['nom']) ? $result['nom'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['nom_pokemon']) ? 'is-invalid' : '' ?>" id="nom_pokemon" name="nom_pokemon" value="<?php echo isset($result['nom']) ? $result['nom'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="experience_pokemon">Expérience</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['experience_pokemon']) ? 'is-invalid' : '' ?>" id="experience_pokemon" name="experience_pokemon" value="<?php echo($result['experience']) ? $result['experience'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['experience_pokemon']) ? 'is-invalid' : '' ?>" id="experience_pokemon" name="experience_pokemon" value="<?php echo($result['experience']) ? $result['experience'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="vie_pokemon">Vie</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['vie_pokemon']) ? 'is-invalid' : '' ?>" id="vie_pokemon" name="vie_pokemon" value="<?php echo isset($result['vie']) ? $result['vie'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['vie_pokemon']) ? 'is-invalid' : '' ?>" id="vie_pokemon" name="vie_pokemon" value="<?php echo isset($result['vie']) ? $result['vie'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="defense_pokemon">Défense</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['defense_pokemon']) ? 'is-invalid' : '' ?>" id="defense_pokemon" name="defense_pokemon" value="<?php echo isset($result['defense']) ? $result['defense'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['defense_pokemon']) ? 'is-invalid' : '' ?>" id="defense_pokemon" name="defense_pokemon" value="<?php echo isset($result['defense']) ? $result['defense'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="attaque_pokemon">Attaque</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control <?php echo isset($form_errors['attaque_pokemon']) ? 'is-invalid' : '' ?>" id="attaque_pokemon" name="attaque_pokemon" value="<?php echo isset($result['attaque']) ? $result['attaque'] : '' ?>">
+                  <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['attaque_pokemon']) ? 'is-invalid' : '' ?>" id="attaque_pokemon" name="attaque_pokemon" value="<?php echo isset($result['attaque']) ? $result['attaque'] : '' ?>">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="pokedex_pokemon">Propriétaire</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control <?php echo isset($form_errors['pokedex_pokemon']) ? 'is-invalid' : '' ?>" id="pokedex_pokemon" name="pokedex_pokemon" value="<?php echo isset($result['id_pokedex']) ? $result['id_pokedex'] : '' ?>">
+                <input readonly="readonly" type="text" class="form-control <?php echo isset($form_errors['pokedex_pokemon']) ? 'is-invalid' : '' ?>" id="pokedex_pokemon" name="pokedex_pokemon" value="<?php echo isset($result['nom_proprietaire']) ? $result['nom_proprietaire'] : '' ?>">
                 </div>
               </div>
             </div>
